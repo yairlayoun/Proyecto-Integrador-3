@@ -7,14 +7,14 @@ dotenv.config();
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "process.env.EMAIL_USER",  // Cambia por tu dirección de correo
-    pass: 'process.env.EMAIL_PASSWORD',        // Cambia por tu contraseña
+    user: "process.env.EMAIL_USER",  
+    pass: 'process.env.EMAIL_PASSWORD',        
   },
 });
 
 export const sendPasswordResetEmail = (to, resetLink) => {
   const mailOptions = {
-    from: "process.env.EMAIL_USER",  // Cambia por tu dirección de correo
+    from: "process.env.EMAIL_USER",  
     to,
     subject: 'Restablecimiento de contraseña',
     html: `<p>Haz clic en el siguiente enlace para restablecer tu contraseña: ${resetLink}</p>`,
